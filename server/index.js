@@ -81,3 +81,6 @@ async function gracefulShutdown() {
 
 process.on("SIGTERM", gracefulShutdown);
 process.on("SIGINT", gracefulShutdown);
+
+// Fallback catch-all route for SPA routing
+// app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../client/dist/index.html')));
