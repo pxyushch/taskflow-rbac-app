@@ -1,0 +1,25 @@
+{
+  "name": "taskflow-rbac-app",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "start": "npm run db:generate --workspace server && npm run db:push --workspace server && npm run start --workspace server",
+    "db:generate": "npm run db:generate --workspace server",
+    "db:push": "npm run db:push --workspace server",
+    "seed": "npm run seed --workspace server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
